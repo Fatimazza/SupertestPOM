@@ -1,12 +1,12 @@
 const assert = require('chai').expect;
 
 const testCases = {
-    describe: 'As a User, I want to make sure Value is correct',
+    describe: 'As a User, I want to see Astronomy Picture of the Day',
     positive: {
-        validParams: 'Verify True equal True'
+        validParams: 'Verify the APOD data is displayed'
     },
     negative: {
-        invalidParams: 'Verify False equal False'
+        invalidParams: 'Ensure data not available when invalid parameter inputted'
     }
 };
 
