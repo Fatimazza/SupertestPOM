@@ -4,6 +4,6 @@ const testCases = {
         validParams: 'Verify True equal True'
     },
     negative: {
-        validParams: 'Verify False equal False'
+        invalidParams: 'Verify False equal False'
     }
 }
