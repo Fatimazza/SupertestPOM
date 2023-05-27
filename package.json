@@ -1,0 +1,14 @@
+{
+  "name": "supertestpom",
+  "version": "1.0.0",
+  "description": "supertest api test with pom",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "supertest"
+  ],
+  "author": "fatima",
+  "license": "ISC"
+}
