@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
     "supertest": "^6.3.3"
   }
 }
