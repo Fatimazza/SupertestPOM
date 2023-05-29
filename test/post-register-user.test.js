@@ -1,6 +1,7 @@
 const assert = require('chai').expect;
 
 const page = require('../page/post-register-user.api.js');
+const data = require('../data/user-data.js');
 
 let payload = {
     'email': 'eve.holt@reqres.in',
@@ -16,7 +17,7 @@ const testCases = {
 
 describe(`@get ${testCases.describe}`, () => {
     it(`@positive ${testCases.positive.validParams}`, async () => {
-        const response = await page.postRegisterUser(payload);
+        const response = await page.postRegisterUser(data.REGISTER_USER_DATA);
         assert(response.status).to.equal(200);
     });
 });
