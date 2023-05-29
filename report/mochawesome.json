@@ -1,0 +1,199 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-29T01:10:01.841Z",
+    "end": "2023-05-29T01:10:10.098Z",
+    "duration": 8257,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a5afdf73-94aa-49e2-8dbe-9aa73cfcf7bb",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ca0b02e5-58ef-47fc-ba19-bd290470430f",
+          "title": "@get As a User, I want to see Astronomy Picture of the Day",
+          "fullFile": "/Users/fatimazza/Belajar/QualityAssurance/SupertestPOM/test/get-apod.test.js",
+          "file": "/test/get-apod.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "@positive Verify the APOD data is displayed",
+              "fullTitle": "@get As a User, I want to see Astronomy Picture of the Day @positive Verify the APOD data is displayed",
+              "timedOut": false,
+              "duration": 6413,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.getApod(payload);\nassert(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "b1509d71-f4af-433a-b9ec-33c1456d81b8",
+              "parentUUID": "ca0b02e5-58ef-47fc-ba19-bd290470430f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "@negative Ensure data not available when invalid parameter inputted",
+              "fullTitle": "@get As a User, I want to see Astronomy Picture of the Day @negative Ensure data not available when invalid parameter inputted",
+              "timedOut": false,
+              "duration": 1230,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "payload.end_date = '2023-db-23';\nconst response = await page.getApod(payload);\nassert(response.status).to.equal(400);",
+              "err": {},
+              "uuid": "d2c17427-e370-464c-9474-641685e29c4a",
+              "parentUUID": "ca0b02e5-58ef-47fc-ba19-bd290470430f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b1509d71-f4af-433a-b9ec-33c1456d81b8",
+            "d2c17427-e370-464c-9474-641685e29c4a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7643,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "d438e4bf-f3ca-45e7-b4b2-0cc6343518dd",
+          "title": "@get As a User, I want to see the list of users",
+          "fullFile": "/Users/fatimazza/Belajar/QualityAssurance/SupertestPOM/test/get-list-users.test.js",
+          "file": "/test/get-list-users.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "@positive Verify the data of users displayed",
+              "fullTitle": "@get As a User, I want to see the list of users @positive Verify the data of users displayed",
+              "timedOut": false,
+              "duration": 114,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.getListUsers(payload);\nassert(response.status).to.equal(200);\nexpect(response.body)\n    .to.be.an(\"object\")\n    .to.include.keys(\"data\", \"support\")\n    .and.to.have.nested.property(\"data\")\n    .that.is.an(\"array\");\nresponse.body.data.forEach((element) => {\n    expect(element)\n        .to.have.all.keys(['id', 'email', 'avatar', 'first_name', 'last_name']);\n});",
+              "err": {},
+              "uuid": "57d5105b-f175-4072-98ee-cf6a63e9558a",
+              "parentUUID": "d438e4bf-f3ca-45e7-b4b2-0cc6343518dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "57d5105b-f175-4072-98ee-cf6a63e9558a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 114,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "0bf23508-4fe0-4af8-b768-76a1f2c1e57f",
+          "title": "@get As a User, I want to register to Reqres.in",
+          "fullFile": "/Users/fatimazza/Belajar/QualityAssurance/SupertestPOM/test/post-register-user.test.js",
+          "file": "/test/post-register-user.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "@positive Verify new user successfully registered",
+              "fullTitle": "@get As a User, I want to register to Reqres.in @positive Verify new user successfully registered",
+              "timedOut": false,
+              "duration": 486,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.postRegisterUser(data.REGISTER_USER_DATA);\nassert(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "35f2c693-6b91-4612-8fb3-71155a515fdd",
+              "parentUUID": "0bf23508-4fe0-4af8-b768-76a1f2c1e57f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "35f2c693-6b91-4612-8fb3-71155a515fdd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 486,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
