@@ -13,6 +13,7 @@ What will be used on this project
 | Editor         | VS Code (https://code.visualstudio.com/download) |
 | Package Manager| NPM (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) |
 | API Test Tools | Chai (https://www.npmjs.com/package/chai) |
+|                | Chai Json Schema (https://www.npmjs.com/package/chai-json-schema) |
 |                | Supertest (https://www.npmjs.com/package/supertest) |
 |                | Dotenv (https://www.npmjs.com/package/dotenv) |
 | Test Reporter  | Mochawesome (https://www.npmjs.com/package/mochawesome) |
@@ -41,6 +42,44 @@ node --version
 
 Open this Automation Project using VS Code Editor.
 
+### Testing Tools Installation
+
+Change to Project directory on Terminal or Command Prompt
+
+```Bash
+cd SupertestPOM
+```
+
+Install Chai
+
+```Bash
+npm install chai
+```
+
+Install Chai-Json-Schema
+
+```Bash
+npm install chai-json-schema
+```
+
+Install Supertest
+
+```Bash
+npm install supertest
+```
+
+Install Dotenv
+
+```Bash
+npm install dotenv --save
+```
+
+Install Mochawesome Reporter
+
+```Bash
+npm install mochawesome
+```
+
 ### Run the Automation Project 
 
 Change to Project directory on Terminal or Command Prompt
@@ -62,12 +101,6 @@ npm run test test/get-apod.test.js
 ```
 
 ### Run the Automation Project with HTML Report
-
-Install Mochawesome Reporter
-
-```Bash
-npm install mochawesome
-```
 
 Run API Test with the Reporter
 
