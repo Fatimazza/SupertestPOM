@@ -52,13 +52,13 @@ cd SupertestPOM
 Run All Tests on Terminal
 
 ```Bash
-mocha test/api/
+npm run test
 ```
 
 Run Specific Test
 
 ```Bash
-mocha test/get-apod.test.js 
+npm run test test/get-apod.test.js
 ```
 
 ### Run the Automation Project with HTML Report
@@ -76,7 +76,7 @@ Run API Test with the Reporter
 All Test
 
 ```Bash
-npm run test
+npm run report
 ```
 
 Test HTML Report
