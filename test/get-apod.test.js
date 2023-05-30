@@ -33,5 +33,6 @@ describe(`@get ${testCases.describe}`, () => {
         payload.end_date = '2023-db-23';
         const response = await page.getApod(payload);
         assert(response.status).to.equal(400);
+        expect(response.body).to.haveOwnProperty("msg").that.contains("does not match");
     });
 });
