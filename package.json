@@ -4,7 +4,8 @@
   "description": "supertest api test with pom",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test --reporter mochawesome --reporter-options reportDir=report,reportFilename=report --timeout 10000"
+    "test" : "mocha --timeout 10000",
+    "report": "mocha test --reporter mochawesome --reporter-options reportDir=report,reportFilename=report --timeout 10000"
   },
   "keywords": [
     "supertest"
